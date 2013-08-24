@@ -4,23 +4,14 @@
   <tr>
     <th>Title</th>
     <th>Author</th>
-    <th>Actions</th>
+    <th>Creation date</th>
   </tr>
 
 <% @news.each do |news| %>
   <tr>
     <td><%= link_to news.title, news %></td>
     <td><%= news.author %></td>
-    <td>
-      <%= link_to edit_news_path(news), class: 'btn btn-mini' do %>
-        <span><%= 'Edit' %></span>
-        <i class="icon-pencil"></i>
-      <% end %>
-      <%= link_to news, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini' do %>
-        <span><%= 'Delete' %></span>
-        <i class="icon-trash"></i>
-      <% end %>
-    </td>
+    <td><%= news.created_at.strftime("%A, %d-%m-%Y %H:%M") %></td>
   </tr>
 <% end %>
 </table>

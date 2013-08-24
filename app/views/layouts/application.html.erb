@@ -8,10 +8,13 @@
 </head>
 <body>
 <div class="container">
-  <% if notice then %>
-    <div class="alert alert-success"><%= notice %></div>
-  <% end %>
   <%= render partial: 'main_panel' %>
+  <% if notice then %>
+    <div class="alert alert-success">
+      <span><%= notice %></span>
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+  <% end %>
 	<%= yield %>
 </div>
 

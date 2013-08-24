@@ -1,4 +1,8 @@
 NewsFeed::Application.routes.draw do
+  root :to => "news#index"
+
+  devise_for :users
+
   resources :news
 
 
