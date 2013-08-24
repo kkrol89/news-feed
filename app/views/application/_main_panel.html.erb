@@ -1,0 +1,24 @@
+<div class="well well-small">
+  <span class="wrench-icon-wrapper">
+    <i class="icon-wrench"></i>
+    <span>Administrator</span>
+  </span>
+
+  <% if request.path =~ /^\/news\/\d+$/ %>
+    <%= link_to edit_news_path(@news), class: 'btn btn-mini' do %>
+      <span>Edit</span>
+      <i class="icon-pencil"></i>
+    <% end %>
+    <%= link_to @news, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini' do %>
+          <span><%= 'Delete' %></span>
+          <i class="icon-trash"></i>
+    <% end %>
+  <% end %>
+
+  <% if request.path =~ /^\/news\/?$/ %>
+    <%= link_to new_news_path, class: 'btn btn-mini' do %>
+      <span><%= 'Add News' %></span>
+      <i class="icon-plus"></i>
+    <% end %>
+  <% end %>
+</div>

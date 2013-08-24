@@ -7,8 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+<div class="container">
+  <% if notice then %>
+    <div class="alert alert-success"><%= notice %></div>
+  <% end %>
+  <%= render partial: 'main_panel' %>
+	<%= yield %>
+</div>
 
 </body>
 </html>

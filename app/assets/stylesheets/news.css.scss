@@ -1,3 +1,20 @@
 // Place all the styles related to the News controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.control-group.valid .valid-hidden {
+	display: none;
+}
+
+.bolded-label {
+  font-weight: bold;
+}
+
+.wrench-icon-wrapper {
+  border: 1px solid #DDD;
+  border-radius: 2px;
+  padding: 2px 4px;
+  background-color: white;
+  margin-right: 5px;
+  
+}

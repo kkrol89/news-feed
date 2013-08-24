@@ -1,29 +1,26 @@
 <%= form_for(@news) do |f| %>
-  <% if @news.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@news.errors.count, "error") %> prohibited this news from being saved:</h2>
-
-      <ul>
-      <% @news.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <div class="control-group <%= control_state(@news, :title) %>">
+    <%= f.label :title, class: "control-label bolded-label" %>
+    <div class="controls">
+      <%= f.text_field :title, placeholder: 'Title of the news' %>
+      <span class="help-inline valid-hidden"><%= field_errors(@news, :title) %></span>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
+  <div class="control-group <%= control_state(@news, :content) %>">
+    <%= f.label :content, class: 'control-label bolded-label' %>
+    <div class="controls">
+      <%= f.text_area :content, style: 'max-height: 200px;', placeholder: 'Content of the news...' %>
+      <span class="help-inline valid-hidden"><%= field_errors(@news, :content) %></span>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :author %><br />
-    <%= f.text_field :author %>
+  <div class="control-group <%= control_state(@news, :author) %>">
+    <%= f.label :author, class: 'control-label bolded-label' %>
+    <div class="controls">
+      <%= f.text_field :author %>
+      <span class="help-inline valid-hidden"><%= field_errors(@news, :author) %></span>
+    </div>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-small' %>
   </div>
 <% end %>
