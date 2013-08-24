@@ -16,7 +16,7 @@
       <% end %>
     <% end %>
 
-    <% if request.path =~ /^\/news\/?$/ then %>
+    <% if request.path =~ /^\/news\/?$/ || request.path =~ /^\/$/ then %>
       <%= link_to new_news_path, class: 'btn btn-mini' do %>
         <span><%= 'Add News' %></span>
         <i class="icon-plus"></i>
