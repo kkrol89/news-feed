@@ -27,6 +27,7 @@ class NewsController < ApplicationController
   # GET /news/new.json
   def new
     @news = News.new
+    @news.author = current_user.email
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,6 +44,7 @@ class NewsController < ApplicationController
   # POST /news.json
   def create
     @news = News.new(params[:news])
+    @news.user = current_user
 
     respond_to do |format|
       if @news.save

@@ -1,4 +1,6 @@
 class News < ActiveRecord::Base
-  attr_accessible :author, :content, :title
+  belongs_to :user
+
+  attr_accessible :author, :content, :title, :user_id
   validates :title, :author, :content, presence: true
 end
